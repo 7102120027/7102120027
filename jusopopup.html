@@ -16,7 +16,7 @@
 	$ADDR['rnMgtSn'] = $_POST['rnMgtSn'];
 	$ADDR['bdMgtSn'] = $_POST['bdMgtSn'];
 	$ADDR['detBdNmList'] = $_POST['detBdNmList'];
-	//** 2017³â 2¿ù Á¦°øÇ×¸ñ Ãß°¡ **/
+	//** 2017ë…„ 2ì›” ì œê³µí•­ëª© ì¶”ê°€ **/
 	$ADDR['bdNm'] = $_POST['bdNm'];
 	$ADDR['bdKdcd'] = $_POST['bdKdcd'];
 	$ADDR['siNm'] = $_POST['siNm'];
@@ -30,33 +30,33 @@
 	$ADDR['mtYn'] = $_POST['mtYn'];
 	$ADDR['lnbrMnnm'] = $_POST['lnbrMnnm'];	
 	$ADDR['lnbrSlno'] = $_POST['lnbrSlno'];
-	//** 2017³â 3¿ù Á¦°øÇ×¸ñ Ãß°¡ **/
+	//** 2017ë…„ 3ì›” ì œê³µí•­ëª© ì¶”ê°€ **/
 	$ADDR['emdNo'] = $_POST['emdNo'];
 ?>
 </head>
 <script language="javascript">
-// opener°ü·Ã ¿À·ù°¡ ¹ß»ıÇÏ´Â °æ¿ì ¾Æ·¡ ÁÖ¼®À» ÇØÁöÇÏ°í, »ç¿ëÀÚÀÇ µµ¸ŞÀÎÁ¤º¸¸¦ ÀÔ·ÂÇÕ´Ï´Ù. ("ÁÖ¼ÒÀÔ·ÂÈ­¸é ¼Ò½º"µµ µ¿ÀÏÇÏ°Ô Àû¿ë½ÃÄÑ¾ß ÇÕ´Ï´Ù.)
+// openerê´€ë ¨ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ëŠ” ê²½ìš° ì•„ë˜ ì£¼ì„ì„ í•´ì§€í•˜ê³ , ì‚¬ìš©ìì˜ ë„ë©”ì¸ì •ë³´ë¥¼ ì…ë ¥í•©ë‹ˆë‹¤. ("ì£¼ì†Œì…ë ¥í™”ë©´ ì†ŒìŠ¤"ë„ ë™ì¼í•˜ê²Œ ì ìš©ì‹œì¼œì•¼ í•©ë‹ˆë‹¤.)
 document.domain = "business.juso.go.kr";
 
 /*
-		¸ğÀÇ ÇØÅ· Å×½ºÆ® ½Ã ÆË¾÷API¸¦ È£ÃâÇÏ½Ã¸é IP°¡ Â÷´Ü µÉ ¼ö ÀÖ½À´Ï´Ù. 
-		ÁÖ¼ÒÆË¾÷API¸¦ Á¦¿ÜÇÏ½Ã°í Å×½ºÆ® ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.
+		ëª¨ì˜ í•´í‚¹ í…ŒìŠ¤íŠ¸ ì‹œ íŒì—…APIë¥¼ í˜¸ì¶œí•˜ì‹œë©´ IPê°€ ì°¨ë‹¨ ë  ìˆ˜ ìˆìŠµë‹ˆë‹¤. 
+		ì£¼ì†ŒíŒì—…APIë¥¼ ì œì™¸í•˜ì‹œê³  í…ŒìŠ¤íŠ¸ í•˜ì‹œê¸° ë°”ëë‹ˆë‹¤.
 */
 
 function init(){
 	var url = location.href;
 	var confmKey = "devU01TX0FVVEgyMDIyMTIxMTEwNDY1ODExMzMyMjY=";
-	var resultType = "4"; // µµ·Î¸íÁÖ¼Ò °Ë»ö°á°ú È­¸é Ãâ·Â³»¿ë, 1 : µµ·Î¸í, 2 : µµ·Î¸í+Áö¹ø+»ó¼¼º¸±â(°ü·ÃÁö¹ø, °üÇÒÁÖ¹Î¼¾ÅÍ), 3 : µµ·Î¸í+»ó¼¼º¸±â(»ó¼¼°Ç¹°¸í), 4 : µµ·Î¸í+Áö¹ø+»ó¼¼º¸±â(°ü·ÃÁö¹ø, °üÇÒÁÖ¹Î¼¾ÅÍ, »ó¼¼°Ç¹°¸í)
-	// php.ini ¿¡ short_open_tag °¡ On À¸·Î ¼³Á¤µÇ¾î µÇ¾î ÀÖ´Â °æ¿ì ¾Æ·¡ ¼Ò½º ÄÚµå »ç¿ë
+	var resultType = "4"; // ë„ë¡œëª…ì£¼ì†Œ ê²€ìƒ‰ê²°ê³¼ í™”ë©´ ì¶œë ¥ë‚´ìš©, 1 : ë„ë¡œëª…, 2 : ë„ë¡œëª…+ì§€ë²ˆ+ìƒì„¸ë³´ê¸°(ê´€ë ¨ì§€ë²ˆ, ê´€í• ì£¼ë¯¼ì„¼í„°), 3 : ë„ë¡œëª…+ìƒì„¸ë³´ê¸°(ìƒì„¸ê±´ë¬¼ëª…), 4 : ë„ë¡œëª…+ì§€ë²ˆ+ìƒì„¸ë³´ê¸°(ê´€ë ¨ì§€ë²ˆ, ê´€í• ì£¼ë¯¼ì„¼í„°, ìƒì„¸ê±´ë¬¼ëª…)
+	// php.ini ì— short_open_tag ê°€ On ìœ¼ë¡œ ì„¤ì •ë˜ì–´ ë˜ì–´ ìˆëŠ” ê²½ìš° ì•„ë˜ ì†ŒìŠ¤ ì½”ë“œ ì‚¬ìš©
 	var inputYn= "<?=$ADDR['inputYn']?>";
-	// php.ini ¿¡ short_open_tag °¡ Off À¸·Î ¼³Á¤µÇ¾î µÇ¾î ÀÖ´Â °æ¿ì ¾Æ·¡ ¼Ò½º ÄÚµå »ç¿ë
+	// php.ini ì— short_open_tag ê°€ Off ìœ¼ë¡œ ì„¤ì •ë˜ì–´ ë˜ì–´ ìˆëŠ” ê²½ìš° ì•„ë˜ ì†ŒìŠ¤ ì½”ë“œ ì‚¬ìš©
 	// var inputYn= "<?php echo $ADDR['inputYn']; ?>";
 	if(inputYn != "Y"){
 		document.form.confmKey.value = confmKey;
 		document.form.returnUrl.value = url;
 		document.form.resultType.value = resultType;
-		document.form.action="https://business.juso.go.kr/addrlink/addrLinkUrl.do"; //ÀÎÅÍ³İ¸Á
-		//document.form.action="https://business.juso.go.kr/addrlink/addrMobileLinkUrl.do"; //¸ğ¹ÙÀÏ À¥ÀÎ °æ¿ì, ÀÎÅÍ³İ¸Á
+		document.form.action="https://business.juso.go.kr/addrlink/addrLinkUrl.do"; //ì¸í„°ë„·ë§
+		//document.form.action="https://business.juso.go.kr/addrlink/addrMobileLinkUrl.do"; //ëª¨ë°”ì¼ ì›¹ì¸ ê²½ìš°, ì¸í„°ë„·ë§
 		document.form.submit();
 	}else{
 		opener.jusoCallBack("<?=$ADDR[roadFullAddr]?>","<?=$ADDR[roadAddrPart1]?>","<?=$ADDR[addrDetail]?>","<?=$ADDR[roadAddrPart2]?>","<?=$ADDR[engAddr]?>","<?=$ADDR[jibunAddr]?>","<?=$ADDR[zipNo]?>", "<?=$ADDR[admCd]?>", "<?=$ADDR[rnMgtSn]?>", "<?=$ADDR[bdMgtSn]?>", "<?=$ADDR[detBdNmList]?>", "<?=$ADDR[bdNm]?>", "<?=$ADDR[bdKdcd]?>", "<?=$ADDR[siNm]?>", "<?=$ADDR[sggNm]?>", "<?=$ADDR[emdNm]?>", "<?=$ADDR[liNm]?>", "<?=$ADDR[rn]?>", "<?=$ADDR[udrtYn]?>", "<?=$ADDR[buldMnnm]?>", "<?=$ADDR[buldSlno]?>", "<?=$ADDR[mtYn]?>", "<?=$ADDR[lnbrMnnm]?>", "<?=$ADDR[lnbrSlno]?>", "<?=$ADDR[emdNo]?>");
@@ -69,9 +69,9 @@ function init(){
 		<input type="hidden" id="confmKey" name="confmKey" value=""/>
 		<input type="hidden" id="returnUrl" name="returnUrl" value=""/>
 		<input type="hidden" id="resultType" name="resultType" value=""/>
-		<!-- ÇØ´ç½Ã½ºÅÛÀÇ ÀÎÄÚµùÅ¸ÀÔÀÌ EUC-KRÀÏ°æ¿ì¿¡¸¸ Ãß°¡ START-->
+		<!-- í•´ë‹¹ì‹œìŠ¤í…œì˜ ì¸ì½”ë”©íƒ€ì…ì´ EUC-KRì¼ê²½ìš°ì—ë§Œ ì¶”ê°€ START-->
 		<input type="hidden" id="encodingType" name="encodingType" value="EUC-KR"/>
-		<!-- ÇØ´ç½Ã½ºÅÛÀÇ ÀÎÄÚµùÅ¸ÀÔÀÌ EUC-KRÀÏ°æ¿ì¿¡¸¸ Ãß°¡ END-->
+		<!-- í•´ë‹¹ì‹œìŠ¤í…œì˜ ì¸ì½”ë”©íƒ€ì…ì´ EUC-KRì¼ê²½ìš°ì—ë§Œ ì¶”ê°€ END-->
 	</form>
 </body>
 </html>
